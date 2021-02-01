@@ -125,5 +125,4 @@ nav img {
 
 .nav-links ul li::after {
   content: "";
-  width: 0%;
 }
