@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Weather Forecast</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa far fa-window-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">COURSE</a></li>
+                    <li><a href="">BLOG</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fas fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </header>
+
+    <div class="container">
+        <form class="col-md-6 m-auto py-5">
+            <div class="input-group mb-3">
+                <input type="text" id="searchBox" class="form-control" placeholder="Enter a location for Weather ...">
+                <div class="input-group-append">
+                    <button type="button" id="btn" class="btn btn-danger">Search</button>
+                </div>
+            </div>
+        </form>
+        <div class="weather-status text-white text-center">
+            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+            <h1 id='city'>Dhaka</h1>
+            <h3 id='temperature'><span>38.06</span>&deg;C</h3>
+            <h1 id='description'>Clouds</h1>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function () {
+            const searchBox = document.getElementById("searchBox").value;
+
+            if (searchBox == "") {
+                alert("Please Enter A City Name?");
+            }
+
+            fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchBox + '&appid=7b089f00d3fa0797576d37aa87762320')
+                .then(response => response.json())
+                .then(data => {
+                    const city = data.name;
+                    const tem = data.main.temp;
+                    const temp = tem - 273.15;
+                    const description = data.weather[0].description;
+
+                    document.getElementById('city').innerText = city;
+                    document.getElementById('temperature').innerText = temp.toFixed(2);
+                    document.getElementById('description').innerText = description;
+                })
+        })
+
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
