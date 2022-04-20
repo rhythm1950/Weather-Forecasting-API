@@ -2,29 +2,29 @@
 <html lang="en">
 
 <head>
-    <title>Weather Forecast</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="style.css">
+    <title>Weather Forecasting</title>
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
             <div class="nav-links" id="navLinks">
                 <i class="fa far fa-window-close" onclick="hideMenu()"></i>
                 <ul>
                     <li><a href="">HOME</a></li>
-                    <li><a href="">ABOUT</a></li>
-                    <li><a href="">COURSE</a></li>
-                    <li><a href="">BLOG</a></li>
-                    <li><a href="">CONTACT</a></li>
+                    <li><a href="">ABOUT US</a></li>
+                    <li><a href="">WEATHER</a></li>
+                    <li><a href="">LATEST</a></li>
+                    <li><a href="">CONTACT US</a></li>
                 </ul>
             </div>
             <i class="fa fas fa-bars" onclick="showMenu()"></i>
@@ -34,16 +34,18 @@
     <div class="container">
         <form class="col-md-6 m-auto py-5">
             <div class="input-group mb-3">
-                <input type="text" id="searchBox" class="form-control" placeholder="Enter a location for Weather ...">
+                <input type="text" id="searchBox" class="form-control"
+                    placeholder="Enter a location for Weather forecast...">
                 <div class="input-group-append">
                     <button type="button" id="btn" class="btn btn-danger">Search</button>
                 </div>
             </div>
         </form>
+
         <div class="weather-status text-white text-center">
             <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
-            <h1 id='city'>Dhaka</h1>
-            <h3 id='temperature'><span>38.06</span>&deg;C</h3>
+            <h1 id='city'>London</h1>
+            <h3 id='temperature'><span>17.06</span>&deg;C</h3>
             <h1 id='description'>Clouds</h1>
         </div>
     </div>
@@ -82,13 +84,6 @@
         }
 
     </script>
-
-
-
-
-
-
-
 </body>
 
 </html>
