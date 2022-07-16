@@ -136,7 +136,3 @@ nav img {
 .nav-links ul li:hover::after {
   width: 100%;
 }
-
-nav .fa {
-  display: none;
-}
