@@ -123,10 +123,6 @@ nav img {
   font-weight: 400;
 }
 
-.nav-links ul li:hover::after {
-  width: 100%;
-}
-
 nav .fa {
   display: none;
 }
