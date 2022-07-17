@@ -129,7 +129,6 @@ nav img {
   height: 2px;
   background-color: rgb(185, 25, 25);
   display: block;
-  margin: auto;
 }
 
 .nav-links ul li:hover::after {
