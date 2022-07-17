@@ -126,7 +126,6 @@ nav img {
 .nav-links ul li::after {
   content: "";
   width: 0%;
-  height: 2px;
 }
 
 .nav-links ul li:hover::after {
